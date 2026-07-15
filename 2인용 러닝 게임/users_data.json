@@ -1,0 +1,31 @@
+{
+  "chanhui2837": {
+    "id": "chanhui2837",
+    "pw": "chan2837!*",
+    "email": "chanhui.lee2837@gmail.com",
+    "highScore": 17207.800000000814,
+    "hardHighScore": 0,
+    "totalCoins": 23,
+    "unlockedItems": {
+      "colors": [
+        "#ff4d4d",
+        "#4d79ff",
+        "#32cd32"
+      ],
+      "hats": [
+        "없음",
+        "야구모자",
+        "왕관"
+      ],
+      "clothes": [
+        "기본스킨",
+        "티셔츠"
+      ]
+    },
+    "custom": {
+      "color": "#4d79ff",
+      "hat": "왕관",
+      "cloth": "기본스킨"
+    }
+  }
+}
