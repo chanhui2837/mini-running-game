@@ -1,0 +1,61 @@
+{
+  "chanhui2837": {
+    "id": "chanhui2837",
+    "pw": "chan2837!*",
+    "email": "chanhui.lee2837@gmail.com",
+    "highScore": 17207.800000000814,
+    "hardHighScore": 0,
+    "totalCoins": 23,
+    "unlockedItems": {
+      "colors": [
+        "#ff4d4d",
+        "#4d79ff",
+        "#32cd32"
+      ],
+      "hats": [
+        "없음",
+        "야구모자",
+        "왕관"
+      ],
+      "clothes": [
+        "기본스킨",
+        "티셔츠"
+      ]
+    },
+    "custom": {
+      "color": "#4d79ff",
+      "hat": "왕관",
+      "cloth": "기본스킨"
+    }
+  }
+}
+
+let lastSaveTime = 0;
+
+function saveUserData(force = false) {
+
+    if (!loggedInUser || loggedInUser === "Player") return;
+    if (!socket || !socket.connected) return;
+
+    const now = Date.now();
+
+    // 너무 자주 저장되는 것 방지 (강제 저장 제외)
+    if (!force && now - lastSaveTime < 3000) return;
+
+    lastSaveTime = now;
+
+    let userData = {
+        id: loggedInUser,
+        custom: {
+            color: curColor,
+            hat: curHat,
+            cloth: curCloth
+        },
+        highScore: curHighScore,
+        hardHighScore: curHardHighScore,
+        totalCoins: totalCoins,
+        unlockedItems: unlockedItems
+    };
+
+    socket.emit("saveUserData", userData);
+}
